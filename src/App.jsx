@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  AppBar,
-  Toolbar,
   Typography,
   Button,
   Container,
@@ -14,18 +12,12 @@ import {
   IconButton,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import CustomNavBar from "./components/CustomNavBar/CustomNavBar";
 
 function App() {
   return (
     <div>
-      <AppBar position="static" color="secondary">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            College Archive
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
+      <CustomNavBar />
 
       <Container maxWidth="lg" style={{ marginTop: 20 }}>
         <Paper style={{ padding: "20px", backgroundColor: "#f3e5f5" }}>
