@@ -17,8 +17,6 @@ import CustomNavBar from "./components/CustomNavBar/CustomNavBar";
 function App() {
   return (
     <div>
-      <CustomNavBar />
-
       <Container maxWidth="lg" style={{ marginTop: 20 }}>
         <Paper style={{ padding: "20px", backgroundColor: "#f3e5f5" }}>
           <Typography variant="h3" gutterBottom>

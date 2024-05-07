@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Container,
   Typography,
@@ -56,7 +57,9 @@ const SearchResults = ({ searchQuery }) => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">View</Button>
+                    <Button size="small" component={Link} to={`/content`}>
+                      View
+                    </Button>
                   </CardActions>
                 </Card>
               </Grid>

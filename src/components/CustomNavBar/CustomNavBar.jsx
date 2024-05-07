@@ -9,7 +9,13 @@ const CustomNavBar = () => {
           College Archive
         </Typography>
         <Button color="inherit" component={Link} to="/search">
-          Login
+          Login/SignUp
+        </Button>
+        <Button color="inherit" component={Link} to="/about">
+          About
+        </Button>
+        <Button color="inherit" component={Link} to="/">
+          Home
         </Button>
       </Toolbar>
     </AppBar>
