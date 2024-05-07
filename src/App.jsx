@@ -11,10 +11,16 @@ import {
   InputBase,
   IconButton,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-import CustomNavBar from "./components/CustomNavBar/CustomNavBar";
 
 function App() {
+  const [searchText, setSearchText] = React.useState("");
+
+  const handleSearch = (event) => {
+    setSearchText(event.target.value);
+  };
+
   return (
     <div>
       <Container maxWidth="lg" style={{ marginTop: 20 }}>
@@ -43,8 +49,15 @@ function App() {
             sx={{ ml: 1, flex: 1 }}
             placeholder="Search archives"
             inputProps={{ "aria-label": "search archives" }}
+            value={searchText}
+            onChange={handleSearch}
           />
-          <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+          <IconButton
+            sx={{ p: "10px" }}
+            aria-label="search"
+            component={Link}
+            to={`/search/${searchText}`}
+          >
             <SearchIcon />
           </IconButton>
         </Paper>

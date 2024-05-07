@@ -15,8 +15,8 @@ root.render(
       <CustomNavBar />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/search" element={<SearchResults />} />
-        <Route path="/content" element={<Content />} />
+        <Route path="/search/:input" element={<SearchResults />} />
+        <Route path="/content/:id" element={<Content />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>

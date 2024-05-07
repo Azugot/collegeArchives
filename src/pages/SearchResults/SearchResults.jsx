@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Container,
   Typography,
@@ -18,26 +18,27 @@ const mockResults = [
   { id: 3, title: "Modern History: Term Paper", date: "2022-01-12" },
 ];
 
-const SearchResults = ({ searchQuery }) => {
+const SearchResults = () => {
   // State to manage loading status (assuming data fetching mechanism)
+
+  const { input } = useParams();
   const [loading, setLoading] = React.useState(false);
   const [results, setResults] = React.useState([]);
 
-  // Fetch results based on searchQuery
-  // Simulate fetch with useEffect
+  console.log(input);
+
   React.useEffect(() => {
     setLoading(true);
-    // Simulate an API call
     setTimeout(() => {
       setResults(mockResults); // Set mock data as results
       setLoading(false);
     }, 1000);
-  }, [searchQuery]);
+  }, [input]);
 
   return (
     <Container maxWidth="md" style={{ marginTop: 20 }}>
       <Typography variant="h4" gutterBottom>
-        Search Results for "{searchQuery}"
+        Search Results for "{input}"
       </Typography>
 
       {loading ? (
@@ -57,7 +58,11 @@ const SearchResults = ({ searchQuery }) => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" component={Link} to={`/content`}>
+                    <Button
+                      size="small"
+                      component={Link}
+                      to={`/content/${result.id}`}
+                    >
                       View
                     </Button>
                   </CardActions>
